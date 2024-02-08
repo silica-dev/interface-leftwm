@@ -1,0 +1,103 @@
+//  _        ___                                      ___ _
+// | |      / __)_                                   / __|_)
+// | | ____| |__| |_ _ _ _ ____      ____ ___  ____ | |__ _  ____    ____ ___  ____
+// | |/ _  )  __)  _) | | |    \    / ___) _ \|  _ \|  __) |/ _  |  / ___) _ \|  _ \
+// | ( (/ /| |  | |_| | | | | | |  ( (__| |_| | | | | |  | ( ( | |_| |  | |_| | | | |
+// |_|\____)_|   \___)____|_|_|_|   \____)___/|_| |_|_|  |_|\_|| (_)_|   \___/|_| |_|
+// A WindowManager for Adventurers                         (____/
+// For info about configuration please visit https://github.com/leftwm/leftwm/wiki
+#![enable(implicit_some)]
+(
+    modkey: "Mod4",
+    mousekey: "Mod4",
+    tags: [
+        "0",
+        "1",
+        "idle",
+	"weston",
+    "final",
+    ],
+    max_window_width: None,
+    layouts: [
+        "Fibonacci",
+        "GridHorizontal",
+        "EvenHorizontal",
+    ],
+    layout_mode: Workspace,
+    insert_behavior: Bottom,
+    scratchpad: [
+	(name: "Alacritty",
+	value: "alacritty",
+	x: 0.4, y: 0.4, height: 0.1, width: 0.1
+    	)
+    ],
+    disable_current_tag_swap: false,
+    disable_tile_drag: false,
+    focus_behaviour: Sloppy,
+    focus_new_windows: true,
+    keybind: [
+        (command: Execute, value: "alacritty -e zsh-ros2", modifier: ["modkey", "Shift"], key: "Return"),
+        (command: Execute, value: "gnome-calculator", modifier: ["modkey"], key: "c"),
+        (command: Execute, value: "discord", modifier: ["modkey"], key: "d"),
+        (command: Execute, value: "alacritty -e lvim", modifier: ["modkey"], key: "v"),
+        (command: Execute, value: "onagre", modifier: ["modkey"], key: "space"),
+        (command: Execute, value: "alacritty", modifier: ["modkey"], key: "Return"),
+        (command: Execute, value: "firefox", modifier: ["modkey"], key: "w"),
+        (command: CloseWindow, value: "", modifier: ["modkey", "Shift"], key: "q"),
+        (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
+        (command: Execute, value: "pkill leftwm", modifier: ["modkey", "Shift"], key: "x"),
+
+        (command: FocusNextTag, value: "goto_used", modifier: ["modkey"], key: "n"),
+        (command: FocusPreviousTag, value: "goto_used", modifier: ["modkey"], key: "m"),
+        (command: FocusNextTag, value: "goto_empty", modifier: ["modkey"], key: "t"),
+        (command: MoveWindowUp, value: "", modifier: ["modkey", "Shift"], key: "Up"),
+        (command: MoveWindowDown, value: "", modifier: ["modkey", "Shift"], key: "Down"),
+        (command: IncreaseMainWidth, value: "5", modifier: ["modkey", "Shift"], key: "Right"),
+	(command: DecreaseMainWidth, value: "5", modifier: ["modkey", "Shift"], key: "Left"),
+        (command: FocusWindowUp, value: "", modifier: ["modkey"], key: "Up"),
+        (command: FocusWindowDown, value: "", modifier: ["modkey"], key: "Down"),
+        (command: NextLayout, value: "", modifier: ["modkey", "Control"], key: "Up"),
+        (command: PreviousLayout, value: "", modifier: ["modkey", "Control"], key: "Down"),
+        (command: FocusWorkspaceNext, value: "", modifier: ["modkey"], key: "Right"),
+        (command: FocusWorkspacePrevious, value: "", modifier: ["modkey"], key: "Left"),
+        (command: MoveWindowUp, value: "", modifier: ["modkey", "Shift"], key: "k"),
+        (command: MoveWindowDown, value: "", modifier: ["modkey", "Shift"], key: "j"),
+        (command: IncreaseMainWidth, value: "5", modifier: ["modkey", "Shift"], key: "l"),
+	(command: DecreaseMainWidth, value: "5", modifier: ["modkey", "Shift"], key: "h"),
+        (command: FocusWindowUp, value: "", modifier: ["modkey"], key: "k"),
+        (command: FocusWindowDown, value: "", modifier: ["modkey"], key: "j"),
+        (command: NextLayout, value: "", modifier: ["modkey", "Control"], key: "k"),
+        (command: PreviousLayout, value: "", modifier: ["modkey", "Control"], key: "j"),
+        (command: FocusWorkspaceNext, value: "", modifier: ["modkey"], key: "l"),
+        (command: GotoTag, value: "1", modifier: ["modkey"], key: "1"),
+        (command: GotoTag, value: "2", modifier: ["modkey"], key: "2"),
+        (command: GotoTag, value: "3", modifier: ["modkey"], key: "3"),
+        (command: GotoTag, value: "4", modifier: ["modkey"], key: "4"),
+        (command: GotoTag, value: "5", modifier: ["modkey"], key: "5"),
+        (command: MoveToTag, value: "1", modifier: ["modkey", "Shift"], key: "1"),
+        (command: MoveToTag, value: "2", modifier: ["modkey", "Shift"], key: "2"),
+        (command: MoveToTag, value: "3", modifier: ["modkey", "Shift"], key: "3"),
+
+        (command: MoveToTag, value: "4", modifier: ["modkey", "Shift"], key: "4"),
+        (command: MoveToTag, value: "5", modifier: ["modkey", "Shift"], key: "5"),
+	(command: Execute, value: "gnome-screenshot --interactive", modifier: [], key: "Print"),
+	(command: Execute, value: "~/.config/polybar/pipewire-simple.sh --mute", modifier: [], key: "XF86XK_AudioMute"),
+	(command: ToggleFullScreen, value: "", modifier: ["modkey"], key: "f"),
+	(command: Execute, value:"~/.config/polybar/popup-powermenu.sh --popup", modifier: ["modkey", "Shift"], key: "p"),
+	(command: Execute, value: "~/.config/polybar/pipewire-simple.sh --up", modifier: [], key: "XF86XK_AudioRaiseVolume"),
+	(command: Execute, value: "~/.config/polybar/pipewire-simple.sh --down", modifier: [], key: "XF86XK_AudioLowerVolume"),
+	(command: Execute, value: "light -A 10", modifier: [], key: "XF86XK_MonBrightnessUp"),
+	(command: Execute, value: "light -U 10", modifier: [], key: "XF86XK_MonBrightnessDown"),
+    ],
+    workspaces: [],
+    window_rules: [
+	// onagre launcher
+	(window_class: "onagre", spawn_floating: true),
+	(window_class: "yad", spawn_floating: true),
+	(window_class: "gnome-screenshot", spawn_floating: true),
+	(window_title: "Weston.*", spawn_on_tag: 4),
+  (window_class: "kazam", spawn_floating: true),
+  (window_class: "evolution-alarm-notify", spawn_floating: true),
+  (window_class: "xclicker", spawn_floating: true),
+    ]
+)
