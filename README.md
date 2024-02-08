@@ -24,3 +24,6 @@ a cyberpunk-inspired leftwm config
 9. (optional) install this [firefox theme](https://addons.mozilla.org/en-US/firefox/addon/cyberpunk-neon-rain/) to get the look in the gallery image
 
 # Gallery
+![btm, cowsay -f fox, and nvim in a tiled window arrangement](https://raw.githubusercontent.com/Silicasandwhich/interface-leftwm/main/gallery/btm_fox_lvim.png)
+![firefox and discord in a tiled window arrangement](https://raw.githubusercontent.com/Silicasandwhich/interface-leftwm/main/gallery/discord_firefox.png)
+![onagre over the included desktop background, which is a cat overlooking a neon city taken over by corporations](https://github.com/Silicasandwhich/interface-leftwm/blob/main/gallery/onagre.png)
